@@ -41,22 +41,17 @@ TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".ts" for index.t
 }
 ```
 
-### Using `tsc`
+### Transpilation
+
+- tsc (TypeScript compiler)
+- babel (`create-react-app` [dependency](https://github.com/facebook/create-react-app?tab=readme-ov-file#philosophy))
+- esbuild (`vite` [dependency](https://vitejs.dev/guide/features#typescript))
 
 ```
-$ pnpm run build:tsc
+$ pnpm run build:<transpiler>
 
-$ pnpm run start:tsc
-> ts@1.0.0 start:tsc /build-example/packages/ts
-> node dist/index.js
-
-hello world
-path /build-example/packages/ts/dist
-os darwin
+$ pnpm run start:<transpiler>
 ```
-
-### Using `babel`
-
 
 ### `tsc` vs `babel`
 
@@ -67,3 +62,7 @@ os darwin
 > - Do you need a build pipeline with multiple potential outputs? Use `babel` for transpiling and `tsc` for type checking
 
 https://www.typescriptlang.org/docs/handbook/babel-with-typescript.html#babel-vs-tsc-for-typescript
+
+### Note
+
+Though `esbuild` claims to be a bundler, Vite uses `esbuild` purely for transpilation purpose, and depends on `rollup` because of its [ecosystem](https://vitejs.dev/guide/why.html#why-not-bundle-with-esbuild).

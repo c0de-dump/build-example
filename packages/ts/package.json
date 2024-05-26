@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build:tsc": "tsc",
-    "start:tsc": "node dist/index.js",
-    "build:babel": "babel src --out-dir build --extensions '.ts'",
-    "start:babel": "node build/index.js"
+    "start:tsc": "node tsc/index.js",
+    "build:babel": "babel src --out-dir babel --extensions '.ts'",
+    "start:babel": "node babel/index.js",
+    "build:esbuild": "esbuild src/* --bundle --platform=node --outdir=esbuild",
+    "start:esbuild": "node esbuild/index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "@babel/preset-env": "^7.24.6",
     "@babel/preset-typescript": "^7.24.6",
     "@types/node": "^20.12.12",
+    "esbuild": "^0.21.4",
     "typescript": "^5.4.5"
   }
 }
