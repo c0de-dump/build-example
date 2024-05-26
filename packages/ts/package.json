@@ -5,12 +5,18 @@
   "main": "index.js",
   "scripts": {
     "build:tsc": "tsc",
-    "start:tsc": "node dist/index.js"
+    "start:tsc": "node dist/index.js",
+    "build:babel": "babel src --out-dir build --extensions '.ts'",
+    "start:babel": "node build/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.6",
     "@types/node": "^20.12.12",
     "typescript": "^5.4.5"
   }

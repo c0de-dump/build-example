@@ -54,3 +54,16 @@ hello world
 path /build-example/packages/ts/dist
 os darwin
 ```
+
+### Using `babel`
+
+
+### `tsc` vs `babel`
+
+> A lot of the time the answer is “it depends”, or “someone may have decided for you” depending on the project. If you are building your project with an existing framework like tsdx, Angular, NestJS or any framework mentioned in the Getting Started then this decision is handled for you.
+> 
+> However, a useful heuristic could be:
+> - Is your build output mostly the same as your source input files? Use `tsc`
+> - Do you need a build pipeline with multiple potential outputs? Use `babel` for transpiling and `tsc` for type checking
+
+https://www.typescriptlang.org/docs/handbook/babel-with-typescript.html#babel-vs-tsc-for-typescript
